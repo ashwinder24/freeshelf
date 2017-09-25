@@ -1,0 +1,13 @@
+<h1>Update Book</h1>
+
+<%= link_to("List of books", {:action => "index"}, :class => "back-link") %>
+
+<%= form_for(:book, :url => {:action => 'update', :id => @book.id}) do |f|%>
+
+        Title: <%= f.text_field(:title)%></br>
+        Author: <%= f.text_field(:author)%></br>
+        Description: <%= f.text_field(:description)%></br>
+        URL: <%= f.text_field(:url)%></br>
+        <%= submit_tag("Update Book")%>
+
+<% end %>

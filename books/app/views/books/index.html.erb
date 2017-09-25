@@ -1,0 +1,28 @@
+<% if !flash[:notice].blank? %>
+<div class="notice">
+    <%= flash[:notice] %>
+    </div>
+<% end %>
+
+
+
+<div class="books index">
+    <h1>Books</h1>
+<p>List of books</p>
+    
+<%= link_to("Add a new book", {:action => "new"}, :class => "action new") %>
+
+<ul>
+<% @books.each do |book|%>
+<span><p><%= "Title: " + book.title %></p>
+    <p class="action">
+        
+        <%= link_to("Show", {:action => "show", :id => book.id }, :class => "action show") %>
+        <%= link_to("Update", {:action => 'edit', :id => book.id }, :class => "action edit") %>
+        <%= link_to("Delete", {:action => 'delete', :id => book.id }, :class => "action delete") %>
+    
+    </p></span>
+    
+    <% end %>
+    
+</div>

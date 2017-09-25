@@ -1,0 +1,11 @@
+<h1>Delete Book</h1>
+
+<%= link_to("List of books", {:action => "index"}, :class => "back-link") %>
+
+<%= form_for(:book, :url => {:action => 'destroy', :id => @book.id}) do |f|%>
+<p>Are you sure you want to permanently delete this book?</p>
+
+        <p>Title: <%= @book.title %></p>
+<%= submit_tag('Delete book')%>
+        
+<% end %>
